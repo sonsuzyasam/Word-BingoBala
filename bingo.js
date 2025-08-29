@@ -138,15 +138,13 @@
     function buildBoard(){
       board.innerHTML='';
       let idx = 0;
-      for(let r=0;r<6;r++){
-        for(let c=0;c<15;c++){
-          const d = document.createElement('div');
-          d.className='cell';
-          d.dataset.n = idx;
-          d.textContent = WORDS[idx] || '';
-          board.appendChild(d);
-          idx++;
-        }
+      for(let i=0; i<WORDS.length; i++){
+        const d = document.createElement('div');
+        d.className='cell';
+        d.dataset.n = idx;
+        d.textContent = WORDS[idx] || '';
+        board.appendChild(d);
+        idx++;
       }
     }
     function markBoard(){
