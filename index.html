@@ -25,20 +25,31 @@
   
   <header class="topbar">
   <h1>WORD BİNGOBALA</h1>
-  <div style="margin: 12px 0 0 0;">
-    <label for="unit-select" style="font-weight:bold; margin-right:8px;">Ünite Seçimi:</label>
-    <select id="unit-select" style="font-size:1em; padding:4px 8px;">
-      <option value="unit1">1. Ünite Çekilişi</option>
-      <option value="unit2">2. Ünite Çekilişi</option>
-      <option value="unit3">3. Ünite Çekilişi</option>
-      <option value="unit4">4. Ünite Çekilişi</option>
-      <option value="unit5">5. Ünite Çekilişi</option>
-      <option value="unit6">6. Ünite Çekilişi</option>
-      <option value="unit7">7. Ünite Çekilişi</option>
-      <option value="unit8">8. Ünite Çekilişi</option>
-      <option value="unit9">9. Ünite Çekilişi</option>
-      <option value="unit10">10. Ünite Çekilişi</option>
-    </select>
+  <div style="margin: 12px 0 0 0; display: flex; gap: 24px; align-items: center;">
+    <div>
+      <label for="grade-select" style="font-weight:bold; margin-right:8px;">Sınıf Seçimi:</label>
+      <select id="grade-select" style="font-size:1em; padding:4px 8px;">
+  <option value="5" selected>5. Sınıf</option>
+  <option value="6">6. Sınıf</option>
+  <option value="7">7. Sınıf</option>
+  <option value="8">8. Sınıf</option>
+      </select>
+    </div>
+    <div>
+      <label for="unit-select" style="font-weight:bold; margin-right:8px;">Ünite Seçimi:</label>
+      <select id="unit-select" style="font-size:1em; padding:4px 8px;">
+  <option value="unit1" selected>1. Ünite Çekilişi</option>
+        <option value="unit2">2. Ünite Çekilişi</option>
+        <option value="unit3">3. Ünite Çekilişi</option>
+        <option value="unit4">4. Ünite Çekilişi</option>
+        <option value="unit5">5. Ünite Çekilişi</option>
+        <option value="unit6">6. Ünite Çekilişi</option>
+        <option value="unit7">7. Ünite Çekilişi</option>
+        <option value="unit8">8. Ünite Çekilişi</option>
+        <option value="unit9">9. Ünite Çekilişi</option>
+        <option value="unit10">10. Ünite Çekilişi</option>
+      </select>
+    </div>
   </div>
   <div class="actions">
     <button id="btn-call" class="btn">Kelime Çek (TTS)</button>
@@ -206,7 +217,7 @@
     </div>
   </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="jspdf.umd.min.js"></script>
 <script src="./bingo.js"></script>
 </body>
 </html>
