@@ -5,64 +5,59 @@
   <meta name="description" content="BingoBala ile dijital bingo çekilişi, sesli numara okuma, PDF kart üretimi ve offline güvenli kullanım. Okullar, aileler ve etkinlikler için ideal!" />
   <meta name="keywords" content="bingo, çekiliş, dijital bingo, pdf bingo kartı, sesli bingo, offline bingo, okul çekilişi, aile oyunu, etkinlik aracı, tombala" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="BingoBala - Dijital Bingo ve Çekiliş Uygulaması" />
-  <meta property="og:description" content="Dijital bingo çekilişi, sesli okuma ve PDF kart üretimi. Offline, güvenli ve mobil uyumlu!" />
+  <meta property="og:title" content="Word-BingoBala - Dijital Eğitici Etkinlik Bingo ve Çekiliş Uygulaması" />
+  <meta property="og:description" content="Dijital bingo çekilişi,İngilizce Etkinlik, Ortaokul İngilizce Kelimeler, sesli okuma ve PDF kart üretimi. Offline, güvenli ve mobil uyumlu!" />
   <meta property="og:type" content="website" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="google-adsense-account" content="ca-pub-7309845525285029">
-  <title>BingoBala</title>
+  <title>Word-BingoBala</title>
   <link rel="stylesheet" href="./style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script>
-    
-    window.jspdf = window.jspdf || (window.jspdf && window.jspdf.jsPDF ? window.jspdf : undefined);
-  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7309845525285029"
      crossorigin="anonymous"></script>
 </head>
 <body>
   
   <header class="topbar">
-  <h1>WORD BİNGOBALA</h1>
+  <h1>WORD BINGOBALA</h1>
   <div style="margin: 12px 0 0 0; display: flex; gap: 24px; align-items: center;">
     <div>
-      <label for="grade-select" style="font-weight:bold; margin-right:8px;">Sınıf Seçimi:</label>
-      <select id="grade-select" style="font-size:1em; padding:4px 8px;">
-  <option value="5" selected>5. Sınıf</option>
-  <option value="6">6. Sınıf</option>
-  <option value="7">7. Sınıf</option>
-  <option value="8">8. Sınıf</option>
+      <label for="grade-select" style="font-weight:bold; margin-right:18px;">Class Chosen:</label>
+      <select id="grade-select" style="font-size:1em; padding:4px 18px;">
+  <option value="5" selected>5 th Class</option>
+  <option value="6">6 th Class</option>
+  <option value="7">7 th Class</option>
+  <option value="8">8 th Class</option>
       </select>
     </div>
     <div>
-      <label for="unit-select" style="font-weight:bold; margin-right:8px;">Ünite Seçimi:</label>
-      <select id="unit-select" style="font-size:1em; padding:4px 8px;">
-  <option value="unit1" selected>1. Ünite Çekilişi</option>
-        <option value="unit2">2. Ünite Çekilişi</option>
-        <option value="unit3">3. Ünite Çekilişi</option>
-        <option value="unit4">4. Ünite Çekilişi</option>
-        <option value="unit5">5. Ünite Çekilişi</option>
-        <option value="unit6">6. Ünite Çekilişi</option>
-        <option value="unit7">7. Ünite Çekilişi</option>
-        <option value="unit8">8. Ünite Çekilişi</option>
-        <option value="unit9">9. Ünite Çekilişi</option>
-        <option value="unit10">10. Ünite Çekilişi</option>
+      <label for="unit-select" style="font-weight:bold; margin-right:18px;">Unit Chosen:</label>
+      <select id="unit-select" style="font-size:1em; padding:4px 18px;">
+  <option value="unit1" selected>1 st Unit</option>
+        <option value="unit2">2 nd Unit </option>
+        <option value="unit3">3 rd Unit </option>
+        <option value="unit4">4 th Unit </option>
+        <option value="unit5">5 th Unit </option>
+        <option value="unit6">6 th Unit </option>
+        <option value="unit7">7 th Unit </option>
+        <option value="unit8">8 th Unit </option>
+        <option value="unit9">9 th Unit </option>
+        <option value="unit10">10 th Unit</option>
       </select>
     </div>
   </div>
   <div class="actions">
-    <button id="btn-call" class="btn">Kelime Çek (TTS)</button>
+    <button id="btn-call" class="btn">Word Generate</button>
   </div>
   </header>
 
-    <!-- SOL: Ayarlar + Çekiliş Listesi -->
+ 
     <section class="panel">
       <details open>
-        <summary>Ayarlar</summary>
+        <summary>PDF Settings</summary>
 
         <div class="row">
-          <!-- Ünite seçimi artık üst başlığın altında -->
+      
         </div>
 
         <div class="row">
@@ -78,30 +73,29 @@
           <label class="label">Page Count</label>
           <input type="number" id="opt-pages" value="1" min="1" />
           <label class="label">File Name</label>
-          <input type="text" id="opt-basename" value="bingo_" />
+          <input type="text" id="opt-basename" value="WordBingoBala_" />
         </div>
 
         <div class="row">
-          <!-- TTS dili sabit: İngilizce -->
+         
           <label class="label">TTS Language: <b>English</b></label>
         </div>
 
            </details>
 
-      <!-- Tek blok: 6 satır × 15 sütun (kelimelerle) -->
       <div class="list-block">
         <div class="list-head">Control Board</div>
         <div id="board-90" class="board90"></div>
         <div class="actions" style="margin-top:12px;">
-          <button id="btn-reset" class="btn btn-ghost">Sıfırla</button>
-          <button id="btn-pdf" class="btn btn-primary">PDF Üret (6 Şeritli)</button>
+          <button id="btn-reset" class="btn btn-ghost" style="font-size:24pt;">Reset</button>
+          <button id="btn-pdf" class="btn btn-primary" style="font-size:24pt;">Create PDF</button>
         </div>
       </div>
     </section>
 
-    <!-- SAĞ: Son sayı + Çıkan (çekiliş sırası) / Kalan -->
+    
     <section class="panel" id="caller">
-      <h3>Çekiliş</h3>
+      <h3>Draw List</h3>
       <div id="last-number" class="last-number">–</div>
 
       <div class="two-col">
@@ -126,7 +120,6 @@
   
 
   <main class="container">
-    <!-- Bilgilendirme Bölümü (SEO uyumlu) -->
     <section class="info-panel" style="margin-bottom:24px; background:#fffbe7; border-radius:8px; padding:20px; box-shadow:0 2px 8px #0001;">
       <div style="margin:32px 0; text-align:left; background:#f8f8ff; border-radius:8px; padding:18px; box-shadow:0 1px 4px #0001;">
         <h2>Kullanım Talimatları & Oyun Kuralları</h2>
@@ -157,7 +150,6 @@
             <li><a href="https://sonsuzyasam.github.io/taksi-hesaplama/" target="_blank" rel="noopener">Taksi Hesaplama</a></li>
             <li><a href="https://sonsuzyasam.github.io/Bingo/" target="_blank" rel="noopener">Taksi Hesaplama</a></li>
 
-            <!-- Diğer uygulama linklerini buraya ekleyebilirsiniz -->
           </ul>
         </nav>
         <h2>Özellikler</h2>
@@ -203,7 +195,6 @@
 
       </small>
     
-    <!-- Google AdSense Reklamı -->
     <div style="margin-top:16px; text-align:center;">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7309845525285029"
         crossorigin="anonymous"></script>

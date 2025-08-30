@@ -1,3 +1,6 @@
+#btn-reset {
+  color: #fff !important;
+}
 :root{
   --bg:#101317; --panel:#161a20; --muted:#8b98a5; --text:#e7edf3;
   --primary:#1e90ff; --btn:#2a2f36; --border:#2a3340;
@@ -16,10 +19,12 @@ body{
 }
 .topbar h1{margin:0; font-size:20px}
 .actions{display:flex; gap:8px}
-.btn{
-  padding:8px 12px; border-radius:10px; border:1px solid var(--border);
-  background:var(--btn); color:var(--text); cursor:pointer;
+/* ...existing styles... */
+
+#btn-call {
+  font-size: 24pt !important;
 }
+
 .btn:hover{filter:brightness(1.08)}
 .btn-ghost{background:transparent}
 .btn-primary{background:var(--primary); border-color:#247ee6}

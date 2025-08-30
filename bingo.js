@@ -97,7 +97,6 @@
       }catch(_){}
     }
 
-    // 5. sınıf kelime dizileri
     const unitWords5 = {
       unit1: [
         "English","Turkish","Maths","Science","Social Studies","Art","Music","Physical Education","Drama","Religion and Morals","Computer","History","Geography","French","German","Spanish","ICT","on Sunday","on Monday","on Tuesday","on Wednesday","on Thursday","on Friday","on Saturday","bad at","good at","dislike","hate","like","love","enjoy","learn language","play","solving problem","speak","study","How many","How old","Which","When","Where","Who","age","5th grade","6th grade","7th grade","8th grade","middle school","primary school","secondary school","best friend","class","classmate","country","deskmate","family","favourite","friend","guitar","language","nationality","number","only","surname","that is","this is","timetable","Good bye","Great","Hi","How are you","I’m OK","Me too","Nice to meet you","Not bad","Not really","See you","You are welcome","What’s your favourite","What’s your favourite class"
@@ -130,7 +129,6 @@
         "festival","celebration","holiday","national","religious","traditional","New Year","Eid","Christmas","Thanksgiving","Halloween","Children’s Day","Republic Day","Victory Day","April 23","October 29","December 25","fireworks","parade","costume","mask","candy","gift","present","decorate","celebrate","visit relatives","send cards","eat special food","wear traditional clothes","have fun"
       ]
     };
-    // 6. sınıf kelime dizileri
     const unitWords6 = {
       unit1: [
         "arrive at school","arrive home","attend chess club","brush teeth","chat","clean","come back home","cook","do homework","do shopping","drink","drive","eat","feed","finish all homework","get dressed","get home","get out of the bed","get up","go online","go out","go shopping","go to bed","hang around","have a bath","have a busy weekend","have a rest","have a shower","have a snack","have breakfast","have dinner","have lunch","help parents","join","learn","leave home","leave school","live","make","meet friends","play game","play soccer","rest","ride bike","run errands","sleep","start","stay","study lesson","surf on the net","take folkdance course","take a nap","take a shower","take care of the pet","tidy room","visit relatives","wait","wake up","wash","watch","wear","work","would like to","write diary","about","after","because","before","but","here","me","there","until","us","well","with","how many","how much","how","what time","when","where","which","who","whose","why","always","at night","at the weekends","class","early","everyday","free time","in the afternoon","in the evenings","in the mornings","late","leisure time","never","often","on weekdays","rarely","sometimes","traditional","usually"
@@ -163,7 +161,6 @@
         "agree","ask opinion","become","choose","create election campaign","decide","find","fold the paper","give a speech","know","make a poster","make a speech","make noise","need","prepare","put","respect other’s right","respect","elect class president","support","take","think","vote","win","write","fair","important","kind","excited","equal","respectful","responsible","over","ballot box","cabinet","campaign","candidate","child rights","class presidency","close friend","education","election","envelope","equality","fair law","health care","law","other’s right","poll","preparation","president","protection","public","public building","right","thing"
       ]
     };
-    // 7. sınıf kelime dizileri
     const unitWords7 = {
       unit1: [
         "cheerful","clever","creative","easygoing","fair","forgetful","funny","generous","hardworking","helpful","honest","kind","outgoing","patient","polite","popular","punctual","selfish","smart","stubborn","talkative","thoughtful","tolerant","attractive","beard","beautiful","blonde","curly","cute","dark","eye-glasses","fat","freckle","grey hair","good looking","handsome","hazel","headscarf","long","middle aged","moustache","muscle","of medium height","of medium weight","old","overweight","plump","red hair","short","slim","small","straight","strong","sweet","tall","thin","ugly","wavy","weak","well built","young","be late","buy gifts","celebrity","describe","don’t care","family member","friend","get along with","get high marks","get on well","go on time","hang out with friends","have got","help","look like","lucky","look beautiful","patiently","relative","look handsome","reach shelves","share","stay at home","support","tell lie","tell the truth","wear headscarf"
@@ -196,7 +193,6 @@
         "astronomy","astronaut","atmosphere","comet","cosmos","Earth","eclipse","galaxy","gravity","Jupiter","Mars","Mercury","moon","Neptune","planet","Pluto","rocket","Saturn","solar system","space","spaceship","star","sun","telescope","Uranus","Venus","alien","black hole","light year","meteor","orbit","satellite","shooting star","space station","surface","universe","What is the largest planet","Jupiter is the largest planet","Earth orbits the sun","The moon has no atmosphere","Astronauts travel in spaceships"
       ]
     };
-    // 8. sınıf kelime dizileri
     const unitWords8 = {
       unit1: [
         "accept","apologise","ask","attend","back up","become","break promise","buddy","call","care","choose","close friend","come over","concert","count on","decide","describe","dishonesty","each other","excuse","experience","fair","fashionable","feel alone","friendship","fun","funny","generation","get on well","give advice","guess","guest","have a lot in common","honest","hope","how about","how is it going","idea","important","individual","instead","interested in","introduce","invitation","invite","keep promise","keep secret","laid back","learn","letter","lie","like","loyal","loyalty","match","mate","mean","meet","movie theatre","mutual respect","need","neighbour","not at all","occupied","occur","of course","offer","others","outgoing","patience","patient","personality","prefer","prepare snack","priceless","promise","rarely","reason","refuse","relationship","relaxed","reliable","rely on","remain","respect","respectful","same meaning","same opinion","self-disciplined","share","solemn","sorry I can’t","sounds fun","sounds good","sounds great","spend time","still","strong bond","stuffed","support each other","supportive","sure","survive","take things serious","talk","tell lie","tell secret","tell","text","that would be great","that’s why","thing","thirsty","thrilling","true friend","trust","unconditional","understand","want","what about","why not","would you like to","your own"
@@ -230,11 +226,9 @@
       ]
     };
 
-  // Sınıf ve üniteye göre kelime deposu
   let currentGrade = '5';
   let currentUnit = 'unit1';
   let WORDS = [];
-  // Kelime çekilişi (board ve markBoard'dan önce tanımlanmalı)
   let calledWords = [];
   const gradeSelect = document.getElementById('grade-select');
   const unitSelect = document.getElementById('unit-select');
@@ -257,7 +251,6 @@
     if(gradeSelect){
       gradeSelect.addEventListener('change', function(){
         currentGrade = this.value;
-        // Ünite select'i güncelle (opsiyonel: dinamik ünite listesi eklenebilir)
         currentUnit = 'unit1';
         updateWords();
       });
@@ -269,28 +262,22 @@
       });
     }
 
-    // DOM elemanlarını ve board'u önce tanımla
     const board = document.getElementById('board-90');
     const gridDrawn = document.getElementById('drawn-grid');
     const lastEl = document.getElementById('last-number');
 
-    // Başlangıçta board'u doldur
     updateWords();
     const COLS=9, ROWS=3, CARDS_PER_STRIP=6;
     const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=(Math.random()*(i+1)|0); [a[i],a[j]]=[a[j],a[i]]; } return a; };
 
-    // Kelimelerle kart üretimi
     function generateWordStrip(){
-      // Her kartta 15 kelime olacak, bir şeritte 6 kart var: 6x15=90 kelime
       const allWords = shuffle([...WORDS]);
       if (allWords.length < 40) throw new Error('Yeterli kelime yok! (En az 40 kelime olmalı)');
       let idx = 0;
       const tickets = [];
       for(let t=0; t<6; t++){
-        // 3x9 grid, her satırda 5 kelime olacak
         const grid = Array.from({length:ROWS},()=>Array(COLS).fill(null));
         for(let r=0; r<ROWS; r++){
-          // 5 kelimeyi rastgele kolonlara yerleştir
           const cols = shuffle([...Array(COLS).keys()]).slice(0,5);
           for(const c of cols){
             grid[r][c] = allWords[idx++];
@@ -301,9 +288,6 @@
       return tickets;
     }
     function generateWordStripWithRetry(max=400){ for(let i=0;i<max;i++){ try{ const g=generateWordStrip(); if(g) return g; }catch(e){} } throw new Error('Geçerli kelime strip üretilemedi.'); }
-
-  // Kelime çekilişi
-  // let calledWords = []; // Sadece başta tanımlanacak, burada kaldırıldı
 
     function buildBoard(){
       board.innerHTML='';
@@ -318,24 +302,20 @@
       }
     }
     function markBoard(){
-      // Her çekilen kelime işaretlensin
       document.querySelectorAll('#board-90 .cell').forEach(el=>{
         el.classList.toggle('mark', calledWords.includes(el.textContent));
       });
     }
     function renderLists(){
-      // Çıkan: çekiliş SIRASIYLA (sıralama YOK)
       gridDrawn.innerHTML='';
-      for(const w of calledWords){
+      for(const w of [...calledWords].reverse()){
         const s=document.createElement('span'); s.className='pill'; s.textContent=w;
         gridDrawn.appendChild(s);
       }
       markBoard();
     }
 
-    /* ===== Caller (TTS) – kadın sesi öncelikli ===== */
     function pickLang(){
-  // TTS sadece İngilizce
   return 'en-US';
     }
     function pickVoiceFor(lang){
@@ -361,7 +341,6 @@
   speechSynthesis.cancel(); speechSynthesis.speak(u);
     }
     function voicesReady(cb){ if(speechSynthesis.getVoices().length) cb(); else speechSynthesis.onvoiceschanged = cb; }
-    // TTS butonunu sesler hazır olunca aktif et
     voicesReady(function(){
       document.getElementById('btn-call').disabled = false;
     });
@@ -380,23 +359,19 @@
       speakNumber(w);
     }
 
-    /* ===== Band metni: JSON / preset / özel ===== */
     let bandTexts=['WORD BİNGOBALA'], bandIndex=0;
-  // Eksik HTML elemanları kaldırıldı. nextBand fonksiyonu sadeleştirildi.
   const nextBand = ()=> 'WORD BİNGOBALA';
 
-    /* ===== PDF oluşturma ===== */
     function getOpts(){
       return {
         bandColor: document.getElementById('opt-band-color').value || '#f32509ff',
         bandTextColor: document.getElementById('opt-band-text-color').value || '#f1e6e6ff',
         serialStart: parseInt(document.getElementById('opt-serial-start').value||'1',10),
         pages: Math.max(1, parseInt(document.getElementById('opt-pages').value||'1',10)),
-        baseName: (document.getElementById('opt-basename').value||'bingo_').trim()
+        baseName: (document.getElementById('opt-basename').value||'WordBingoBala_').trim()
       };
     }
 
-    // Kart çizimi: band üstte, band üstünde kesik çizgi, seri band içinde (6pt bold)
     function drawTicket(
       doc, x, y, w, h, grid, serial,
       bandColor, bandText, bandTextColor
@@ -408,7 +383,6 @@
       const gridY = y + BAND_H, gridH = h - BAND_H;
       const cellW = w/9, cellH = gridH/3;
 
-      // Hücreler ve kelimeler
       doc.setDrawColor(40); doc.setLineWidth(0.2); doc.setTextColor(0);
       for(let r=0;r<3;r++){
         for(let c=0;c<9;c++){
@@ -421,7 +395,6 @@
           if (fit.lines.length === 1) {
             doc.text(fit.lines[0], cx+cellW/2, cy+cellH/2, {align:'center', baseline:'middle'});
           } else if (fit.lines.length === 2) {
-            // İki satırda ortala
             const lineH = fit.size + 2;
             const y1 = cy+cellH/2 - lineH/2;
             const y2 = cy+cellH/2 + lineH/2;
@@ -431,7 +404,6 @@
         }
       }
 
-      // Band
       const bandTop = y;
       doc.setFillColor(br,bg,bb);
       doc.rect(x, bandTop, w, BAND_H, 'F');
@@ -450,13 +422,12 @@
   const serialY = bandTop + BAND_H - 2; // alt kenara yakın
   doc.text(serialStr, x+w/2, serialY, {align:'center', baseline:'bottom'});
 
-  // Kesik çizgi (bandın ÜSTÜNDE, kalın)
   const dashedY = Math.max(bandTop-1, 0);
   doc.setLineDash([4,2],0); doc.setDrawColor(0);
-  doc.setLineWidth(1.4); // Kalınlık artırıldı
+  doc.setLineWidth(1.4);
   doc.line(x, dashedY, x+w, dashedY);
   doc.setLineDash();
-  doc.setLineWidth(0.2); // Sonra eski kalınlığa dön
+  doc.setLineWidth(0.2);
     }
 
     async function generatePdf(){
@@ -471,12 +442,9 @@
 
   const pageW = doc.internal.pageSize.getWidth(), pageH = doc.internal.pageSize.getHeight();
   const MARGIN_T = cm(0.8), MARGIN_B = cm(0.3), MARGIN_LR = cm(0.8), MARGIN_RR = cm(0.8);
-  // Şerit genişliği, A4'ün kullanılabilir alanını dolduracak şekilde ayarlanıyor
   const STRIP_W = pageW - MARGIN_LR - MARGIN_RR;
-  // Şeritler tam sayfa yüksekliğini kullansın
   const availH = pageH - MARGIN_T - MARGIN_B;
   const ticketH = availH / CARDS_PER_STRIP;
-      // Sayfa üstüne ve altına site adresi ekle
       function drawHeaderFooter() {
         doc.setFontSize(10);
         doc.setTextColor(80,80,80);
@@ -487,7 +455,7 @@
       let serial = o.serialStart;
       const ts=new Date(), pad=n=>String(n).padStart(2,'0');
       const stamp = ts.getFullYear()+pad(ts.getMonth()+1)+pad(ts.getDate())+'_'+pad(ts.getHours())+pad(ts.getMinutes())+pad(ts.getSeconds());
-      const pdfName = `${o.baseName||'bingo_'}${stamp}.pdf`;
+      const pdfName = `${o.baseName||'WordBingoBala_'}${stamp}.pdf`;
 
       function drawStrip(tickets) {
         for (let i=0; i<CARDS_PER_STRIP; i++) {
@@ -509,10 +477,8 @@
       doc.save(pdfName);
     }
 
-    /* ===== UI bağlama & başlangıç ===== */
     document.getElementById('btn-call').addEventListener('click',callWord);
   document.getElementById('btn-reset').addEventListener('click',()=>{ calledWords=[]; lastEl.textContent='–'; renderLists(); });
   document.getElementById('btn-pdf').addEventListener('click',generatePdf);
-  // Otomatik board ve kelime deposu güncellemesi sağlandı
   }
 })();
