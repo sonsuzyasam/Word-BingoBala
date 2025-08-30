@@ -97,10 +97,51 @@
       }catch(_){}
     }
 
-    // Kelime dizisi
-    const WORDS = [
-      "arrive at school","arrive home","attend chess club","brush teeth","chat","clean","come back home","cook","do homework","do shopping","drink","drive","eat","feed","finish all homework","get dressed","get home","get out of the bed","get up","go online","go out","go shopping","go to bed","hang around","have a bath","have a busy weekend","have a rest","have a shower","have a snack","have breakfast","have dinner","have lunch","help parents","join","learn","leave home","leave school","live","make","meet friends","play game","play soccer","rest","ride bike","run errands","sleep","start","stay","study lesson","surf on the net","take folkdance course","take a nap","take a shower","take care of the pet","tidy room","visit relatives","wait","wake up","wash","watch","wear","work","would like to","write diary","about","after","because","before","but","here","me","there","until","us","well","with","how many","how much","how","what time","when","where","which","who","whose","why","always","at night","at the weekends","class","early","everyday","free time","in the afternoon","in the evenings","in the mornings","late","leisure time","never","often","on weekdays","rarely","sometimes","traditional","usually"
-    ];
+    // Ünite kelime dizileri
+    const unitWords = {
+      unit1: [
+        "arrive at school","arrive home","attend chess club","brush teeth","chat","clean","come back home","cook","do homework","do shopping","drink","drive","eat","feed","finish all homework","get dressed","get home","get out of the bed","get up","go online","go out","go shopping","go to bed","hang around","have a bath","have a busy weekend","have a rest","have a shower","have a snack","have breakfast","have dinner","have lunch","help parents","join","learn","leave home","leave school","live","make","meet friends","play game","play soccer","rest","ride bike","run errands","sleep","start","stay","study lesson","surf on the net","take folkdance course","take a nap","take a shower","take care of the pet","tidy room","visit relatives","wait","wake up","wash","watch","wear","work","would like to","write diary","about","after","because","before","but","here","me","there","until","us","well","with","how many","how much","how","what time","when","where","which","who","whose","why","always","at night","at the weekends","class","early","everyday","free time","in the afternoon","in the evenings","in the mornings","late","leisure time","never","often","on weekdays","rarely","sometimes","traditional","usually"
+      ],
+      unit2: [
+        "bagel","baked beans","bean","bread","breakfast","butter","cake","cereal","cheese","croissant","cucumber","dinner","drink","fast food","food","fridge","fruit juice","grapes","healthy food","honey","jam","juice","junk food","lemonade","lunch","muffin","mushroom","olive","omelette","onion","pancake","rice","salami","salt","sausage","snack","soup","sugar","tea","toast","vegetable","buy","dislike","eat","enjoy","give","include","hate","have","like","love","make","mean","need","prefer","put","tell","think","want","after","before","about","but","because","with","a little","a lot of","any","baked","big","delicious","favourite","full","grilled","healthy","hungry","lots of","nutritious","some","special","thirsty","traditional","unhealthy","can I have","do you want","excuse me","it’s all gone","let’s","want","what type of","what kind of","would like","would you like","enjoy it"
+      ],
+      unit3: [
+        "clean","climb mountain","compare","cook","cycle","draw picture","drive","feed the animals","find everything","get","give","grow vegetable and fruit","have a barbeque","help","join","knit","learn","leave","live","make cake","need","play soccer","prefer","prepare","put","read newspaper","rest","ride horse","set the table","spend","take","talk","visit","want","wash the dishes","water flowers","wear","work","would like","beautiful","better","big","boring","busy","cheap","cheerful","clean","cold","crowded","dangerous","easy","enjoyable","exciting","expensive","fast","fat","funny","good","handsome","happy","hard","hardworking","healthy","heavy","high","hot","ill","important","interesting","large","late","lazy","light","long","lovely","low","middle aged","noisy","nutritious","old","peaceful","pretty","quiet","ready","relaxing","safe","same","short","slim","slow","small","strong","tall","thin","tidy","very","warm","young","building","city life","city","country life","country","downtown","everybody","farm house","garden","high building","important exam","kiosk","library","neighbourhood","shop","shopping center","skyscraper","street","summer","thing","ticket","town","traffic jam","winter","are there","at the moment","everything","is there","nothing","now","right now","so","there are","there is","today","when","where","which","who","why","you are right"
+      ],
+      unit4: [
+        "chilly","cold","cool","dry","fabulous","foggy","freezing","hailing","hot","lightning","lovely","pleasant","rainbow","rainy","snowy","spring showers","storm","stormy","sunny","warm","weather forecast","wet","windy","angry","anxious","bored","excited","fine","good","great","happy","moody","nervous","nice","sad","scared","sleepy","surprised","unhappy","well","boot","coat","flip flops","gloves","hat","jacket","jumper","raincoat","scarf","shirt","shorts","sunglasses","sweater","tee shirt","umbrella","average temperature","beach","desert","garden","grandparents","outside","parents","place","sky","snowman","temperature","today","tomorrow","early","first","greetings","late","let’s","really","second","third","very","with","you are right","feel","go sightseeing","look at","look for","look","make snowman","make","need","put on","rain heavily","rain","repeat","ski","snow","spend time","stay","swing","take","understand","want to","wear","how do you feel","how is the weather","how many","how","what is the weather like","when","where","which","who","why","spring","summer","winter","fall","monday","tuesday","wednesday","thursday","friday","saturday","sunday"
+      ],
+      unit5: [
+        "fair","funfair","roller coaster","ghost train","ferris wheel","the house of funny mirrors","chairoplane","bumper cars","carousel","amazed","amazing","anxious","bored","boring","crazy","dangerous","dull","enjoyable","excited","exciting","fantastic","frightened","frightening","great","happy","horrible","nice","scared","sleepy","surprised","terrifying","thrilled","thrilling","upset","all","also","anything","both","everything","really","ride","sign","something","soon","thing","ticket","token","very much","agree","allow","buy","disagree","fasten seat belt","get on","hate","have a rest","love","like","say","sell","think","try","understand","visit","want","want to","I think","I agree","I don’t agree","I agree with you","I don’t understand","what do you think about","which","why","who","when","where","which one","what type of","what kind of","would you like"
+      ],
+      unit6: [
+        "about","Actor","Architect","Baker","Barber","Businessman","Butcher","Cleaner","Cook","Dentist","ago","ask question","at present","become","bring food","build road, bridge and building","build","clean","concert","cook meal","cut fabric","cut hair","defend people at court","design","Doctor","draw plans of buildings","dream job","drive lorries","Driver","Engineer","Farmer","dye hair","examine patient","farm","Feel fine","Fireman","Gardener","free time","grow vegetables and fruit","Hairdresser","Housewife","Lawyer","job","last","look after ill people","make and sell bread","make dress","manage","Manager","Mechanic","meet","mend","repair","now","occupation","patient","people","person","Pilot","Tailor","place","President","Nurse","Policeman","primary school","pull out teeth","put","reach goal","repair cars","Retired","Scientist","Salesperson","Salesman","Saleswoman","sell clothes","serve food","sew fabric","Singer","Waiter","Waitress","Worker","still","take order","teach","tidy","was born","work","yesterday"
+      ],
+      unit7: [
+        "ago","again","ancient city","beach","boat trip","castle","climb","different experience","different","diving","enjoy","everybody","everywhere","famous places","fishing","forest","fun","great","here","hiking","holiday","how long","how often","how","ice-skating","incredible","join","lake","last","last week","learn","live","make snowman","me too","mountain","movie","nature","nobody","paragliding","pick fruit","pick","rain","really","river","sailing","sand","scuba diving","seaside","sightseeing tour","skiing","somebody","somewhere","stay in a tent","study","summer","take","tent","there","tiring","try","two years ago","vacation","village","visit","walk in the forest","want","weather","when","where","which","who","why","winter","yesterday"
+      ],
+      unit8: [
+        "basket","bed","bookshelf","calendar","clock","dictionary","e-book","fox","information","kite","lamp","library","magazine","newspaper","novel","painting","pillow","racket","school bag","story","teddy bear","toy","wall","watch","world map","behind","between","in front of","in","near","next to","on","over","under","answer","borrow","break","buy","call","come","do","fall","feel","find","give","go","happen","have","help","hurt","invite","leave","lend","look for","look up","lose","make","meet","organize","read","see","sing","study","take","visit","walk","worry"
+      ],
+      unit9: [
+        "attend","cause","check","clean","cut down trees","cycle","damage animals habitat","destroy forest","destroy","die","do exercise","drive private cars","drive to work","forget","harm animals","hurry up","hurt animals","keep the sea clean","leave the tap on","live","make new farm lands","pick up","plant trees","plug","pollute water and air","pour waste","prevent pollution","protect animals","protect environment","recycle batteries","recycle litter","recycle paper, glass and plastic","reduce the use of electricity","reduce water pollution","save energy","save","tap is running","tell","throw rubbish around","turn off the lights","turn off the tap","turn on the lights","unplug TV","use environmentally friendly products","use filter","use less water","use private cars","use public transportation","use solar energy","use wind energy","warn","waste energy","waste water","want to","air pollution","electrical devices","environment","everywhere","exhaust gases","factory","garbage","litter","rubbish","junk food","light","living being","lung","natural sources","noise pollution","tap","traffic jam","water pollution","water sources","careful","clean","crowded","dirty","important","noisy","I'm not sure","I'm sure","instead","moreover","regularly","so","there is","there are","wait a second","with"
+      ],
+      unit10: [
+        "agree","ask opinion","become","choose","create election campaign","decide","find","fold the paper","give a speech","know","make a poster","make a speech","make noise","need","prepare","put","respect other’s right","respect","elect class president","support","take","think","vote","win","write","fair","important","kind","excited","equal","respectful","responsible","over","ballot box","cabinet","campaign","candidate","child rights","class presidency","close friend","education","election","envelope","equality","fair law","health care","law","other’s right","poll","preparation","president","protection","public","public building","right","thing"
+      ]
+    };
+    let WORDS = unitWords.unit1;
+    // Ünite seçimi dinamikleştiriliyor
+    const unitSelect = document.getElementById('unit-select');
+    if(unitSelect){
+      unitSelect.addEventListener('change', function(){
+        WORDS = unitWords[this.value] || [];
+        buildBoard();
+        markBoard();
+        resetCaller(); // Ünite değişince çekiliş ve son kelimeyi sıfırla
+        // PDF ve diğer işlemler de burada güncellenebilir
+      });
+    }
     const COLS=9, ROWS=3, CARDS_PER_STRIP=6;
     const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=(Math.random()*(i+1)|0); [a[i],a[j]]=[a[j],a[i]]; } return a; };
 
@@ -108,7 +149,7 @@
     function generateWordStrip(){
       // Her kartta 15 kelime olacak, bir şeritte 6 kart var: 6x15=90 kelime
       const allWords = shuffle([...WORDS]);
-      if (allWords.length < 90) throw new Error('Yeterli kelime yok!');
+  if (allWords.length < 40) throw new Error('Yeterli kelime yok! (En az 40 kelime olmalı)');
       let idx = 0;
       const tickets = [];
       for(let t=0; t<6; t++){
@@ -212,48 +253,8 @@
 
     /* ===== Band metni: JSON / preset / özel ===== */
     let bandTexts=['WORD BİNGOBALA'], bandIndex=0;
-    const srcLocal   = document.getElementById('src-local');
-    const srcPreset  = document.getElementById('src-preset');
-    const srcCustom  = document.getElementById('src-custom');
-    const localFile  = document.getElementById('local-file');
-    const presetSelect  = document.getElementById('preset-select');
-    const customText = document.getElementById('custom-text');
-
-    function setBandsInfo(){ document.getElementById('bands-info').textContent=`${bandTexts.length} başlık yüklendi`; }
-    async function loadPreset(name){
-      try{
-        const r=await fetch(`presets/${name}.json`,{cache:'no-store'}); if(!r.ok) throw new Error(`HTTP ${r.status}`);
-        const arr=await r.json(); if(!Array.isArray(arr)||!arr.length) throw new Error('Boş JSON');
-    bandTexts=arr.map(String); bandIndex=0; setBandsInfo();
-      }catch(e){ console.warn('Preset yüklenemedi:',e); bandTexts=['WORD BİNGOBALA']; bandIndex=0; setBandsInfo(); }
-    }
-    function loadLocalFile(file){
-      const rd=new FileReader();
-      rd.onload=()=>{ try{ const arr=JSON.parse(rd.result);
-        if(Array.isArray(arr)&&arr.length){ bandTexts=arr.map(String); bandIndex=0; setBandsInfo(); }
-        else { bandTexts=['BINGO']; bandIndex=0; setBandsInfo(); alert('JSON bir dizi olmalı.'); }
-      }catch(err){ bandTexts=['BINGO']; bandIndex=0; setBandsInfo(); alert('JSON çözümlenemedi: '+err.message); } };
-      rd.readAsText(file,'utf-8');
-    }
-    function refreshSourceUi(){
-      localFile.disabled = !srcLocal.checked;
-      presetSelect.disabled = !srcPreset.checked;
-      customText.disabled = !srcCustom.checked;
-    }
-    srcLocal.addEventListener('change',refreshSourceUi);
-    srcPreset.addEventListener('change',refreshSourceUi);
-    srcCustom.addEventListener('change',refreshSourceUi);
-    localFile.addEventListener('change', e => { if(e.target.files?.[0]) loadLocalFile(e.target.files[0]); });
-    presetSelect.addEventListener('change', e => loadPreset(e.target.value));
-
-    const nextBand = ()=>{
-      if (srcCustom.checked) {
-        const t = (customText.value || '').trim();
-        return t || 'BINGO';
-      }
-      const list = bandTexts.filter(t=>t && t.trim());
-      return list.length ? list[bandIndex++ % list.length] : 'BINGO';
-    };
+  // Eksik HTML elemanları kaldırıldı. nextBand fonksiyonu sadeleştirildi.
+  const nextBand = ()=> 'WORD BİNGOBALA';
 
     /* ===== PDF oluşturma ===== */
     function getOpts(){
@@ -384,6 +385,8 @@
   document.getElementById('btn-reset').addEventListener('click',()=>{ calledWords=[]; lastEl.textContent='–'; renderLists(); });
   document.getElementById('btn-pdf').addEventListener('click',generatePdf);
 
-  refreshSourceUi(); setBandsInfo(); buildBoard(); loadPreset('valentine'); resetCaller();
+  WORDS = unitWords.unit1;
+  buildBoard();
+  resetCaller();
   }
 })();

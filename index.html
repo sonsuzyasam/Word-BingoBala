@@ -25,11 +25,24 @@
   
   <header class="topbar">
   <h1>WORD BİNGOBALA</h1>
-    <div class="actions">
-  <button id="btn-call" class="btn">Kelime Çek (TTS)</button>
-  <button id="btn-reset" class="btn btn-ghost">Sıfırla</button>
-  <button id="btn-pdf" class="btn btn-primary">PDF Üret (6 Şeritli)</button>
-    </div>
+  <div style="margin: 12px 0 0 0;">
+    <label for="unit-select" style="font-weight:bold; margin-right:8px;">Ünite Seçimi:</label>
+    <select id="unit-select" style="font-size:1em; padding:4px 8px;">
+      <option value="unit1">1. Ünite Çekilişi</option>
+      <option value="unit2">2. Ünite Çekilişi</option>
+      <option value="unit3">3. Ünite Çekilişi</option>
+      <option value="unit4">4. Ünite Çekilişi</option>
+      <option value="unit5">5. Ünite Çekilişi</option>
+      <option value="unit6">6. Ünite Çekilişi</option>
+      <option value="unit7">7. Ünite Çekilişi</option>
+      <option value="unit8">8. Ünite Çekilişi</option>
+      <option value="unit9">9. Ünite Çekilişi</option>
+      <option value="unit10">10. Ünite Çekilişi</option>
+    </select>
+  </div>
+  <div class="actions">
+    <button id="btn-call" class="btn">Kelime Çek (TTS)</button>
+  </div>
   </header>
 
     <!-- SOL: Ayarlar + Çekiliş Listesi -->
@@ -38,18 +51,7 @@
         <summary>Ayarlar</summary>
 
         <div class="row">
-          <label class="label">Yazı Kaynağı</label>
-          <div class="field">
-            <label><input type="radio" name="src" id="src-local"> Yerel JSON</label>
-            <input type="file" id="local-file" accept=".json" disabled />
-            <label><input type="radio" name="src" id="src-preset" checked> Hazır Preset</label>
-            <select id="preset-select">
-              <option value="valentine">Valentine (romantik)</option>
-            </select>
-            <label><input type="radio" name="src" id="src-custom"> Özel Metin</label>
-            <input type="text" id="custom-text" placeholder="Örn: UNIT WORDS" disabled />
-            <span id="bands-info" class="hint">—</span>
-          </div>
+          <!-- Ünite seçimi artık üst başlığın altında -->
         </div>
 
         <div class="row">
@@ -79,6 +81,10 @@
       <div class="list-block">
         <div class="list-head">Control Board</div>
         <div id="board-90" class="board90"></div>
+        <div class="actions" style="margin-top:12px;">
+          <button id="btn-reset" class="btn btn-ghost">Sıfırla</button>
+          <button id="btn-pdf" class="btn btn-primary">PDF Üret (6 Şeritli)</button>
+        </div>
       </div>
     </section>
 
@@ -200,9 +206,8 @@
     </div>
   </footer>
 
-  <script defer src="./bingo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="./bingo.js"></script>
 </body>
 </html>
-
-
   
