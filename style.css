@@ -1,5 +1,5 @@
-#btn-reset {
-  color: #fff !important;
+#btn-call {
+  font-size: 32pt !important;
 }
 :root{
   --bg:#101317; --panel:#161a20; --muted:#8b98a5; --text:#e7edf3;
@@ -11,20 +11,32 @@ html,body{height:100%}
 body{
   margin:0; background:var(--bg); color:var(--text);
   font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","DejaVu Sans",sans-serif;
+  padding-top:72px;
+}
+@media (max-width: 700px) {
+  body {
+    padding-top:140px;
+  }
+  .topbar {
+    min-height:120px;
+  }
+  #caller {
+    margin-top:16px;
+  }
 }
 .topbar{
   display:flex; align-items:center; justify-content:space-between;
   padding:12px 16px; border-bottom:1px solid var(--border);
-  position:sticky; top:0; background:rgba(16,19,23,.9); backdrop-filter:saturate(180%) blur(6px);
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(16,19,23,.97); backdrop-filter:saturate(180%) blur(6px);
+  box-shadow:0 2px 8px #0002;
 }
 .topbar h1{margin:0; font-size:20px}
 .actions{display:flex; gap:8px}
-/* ...existing styles... */
-
-#btn-call {
-  font-size: 24pt !important;
+.btn{
+  padding:8px 12px; border-radius:10px; border:1px solid var(--border);
+  background:var(--btn); color:var(--text); cursor:pointer;
 }
-
 .btn:hover{filter:brightness(1.08)}
 .btn-ghost{background:transparent}
 .btn-primary{background:var(--primary); border-color:#247ee6}

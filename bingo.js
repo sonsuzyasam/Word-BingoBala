@@ -253,12 +253,14 @@
         currentGrade = this.value;
         currentUnit = 'unit1';
         updateWords();
+        stopAutoCall();
       });
     }
     if(unitSelect){
       unitSelect.addEventListener('change', function(){
         currentUnit = this.value;
         updateWords();
+        stopAutoCall();
       });
     }
 
@@ -479,6 +481,48 @@
 
     document.getElementById('btn-call').addEventListener('click',callWord);
   document.getElementById('btn-reset').addEventListener('click',()=>{ calledWords=[]; lastEl.textContent='–'; renderLists(); });
+  document.getElementById('btn-reset').addEventListener('click',()=>{ calledWords=[]; lastEl.textContent='–'; renderLists(); stopAutoCall(); });
   document.getElementById('btn-pdf').addEventListener('click',generatePdf);
+
+  let autoCallTimer = null;
+  let lastAutoCallInterval = 0;
+    function startAutoCall(intervalSec) {
+      stopAutoCall(false);
+      if (intervalSec > 0) {
+        lastAutoCallInterval = intervalSec;
+        autoCallTimer = setInterval(() => {
+          if (calledWords.length < WORDS.length) {
+            callWord();
+          } else {
+            stopAutoCall();
+          }
+        }, intervalSec * 1000);
+        document.getElementById('btn-auto-call-stop').textContent = 'Durdur';
+      }
+    }
+    function stopAutoCall() {
+      if (autoCallTimer) {
+        clearInterval(autoCallTimer);
+        autoCallTimer = null;
+        document.getElementById('btn-auto-call-stop').textContent = 'Devam';
+      }
+    }
+    document.getElementById('auto-call-select').addEventListener('change', function(e) {
+      const sec = parseInt(e.target.value, 10);
+      if (sec > 0) {
+        startAutoCall(sec);
+      } else {
+        stopAutoCall();
+      }
+    });
+    document.getElementById('btn-auto-call-stop').addEventListener('click', function(){
+      if (!autoCallTimer && lastAutoCallInterval > 0) {
+        startAutoCall(lastAutoCallInterval);
+      } else {
+        stopAutoCall();
+      }
+    });
+
+    refreshSourceUi(); setBandsInfo(); buildBoard(); loadPreset('valentine'); resetCaller();
   }
 })();
