@@ -497,14 +497,14 @@
             stopAutoCall();
           }
         }, intervalSec * 1000);
-        document.getElementById('btn-auto-call-stop').textContent = 'Durdur';
+        document.getElementById('btn-auto-call-stop').textContent = 'Stop';
       }
     }
     function stopAutoCall() {
       if (autoCallTimer) {
         clearInterval(autoCallTimer);
         autoCallTimer = null;
-        document.getElementById('btn-auto-call-stop').textContent = 'Devam';
+        document.getElementById('btn-auto-call-stop').textContent = 'Play';
       }
     }
     document.getElementById('auto-call-select').addEventListener('change', function(e) {
