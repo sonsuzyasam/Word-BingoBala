@@ -59,37 +59,18 @@
   </header>
 
  
+    <section class="panel" id="caller">
+      <h3>Draw List</h3>
+      <div id="last-number" class="last-number">–</div>
+      <div class="two-col">
+        <div class="list-block">
+          <div class="list-head">Last Word</div>
+          <div id="drawn-grid" class="box-grid"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="panel">
-      <details open>
-        <summary>PDF Settings</summary>
-
-        <div class="row">
-      
-        </div>
-
-        <div class="row">
-          <label class="label">Band Color</label>
-          <input type="color" id="opt-band-color" value="#ff7a00" />
-          <label class="label">Text Color</label>
-          <input type="color" id="opt-band-text-color" value="#000000" />
-        </div>
-
-        <div class="row">
-          <label class="label">Serial Start:</label>
-          <input type="number" id="opt-serial-start" value="1" min="1" />
-          <label class="label">Page Count</label>
-          <input type="number" id="opt-pages" value="1" min="1" />
-          <label class="label">File Name</label>
-          <input type="text" id="opt-basename" value="WordBingoBala_" />
-        </div>
-
-        <div class="row">
-         
-          <label class="label">TTS Language: <b>English</b></label>
-        </div>
-
-           </details>
-
       <div class="list-block">
         <div class="list-head">Control Board</div>
         <div id="board-90" class="board90"></div>
@@ -98,19 +79,27 @@
           <button id="btn-pdf" class="btn btn-primary" style="font-size:24pt;">Create PDF</button>
         </div>
       </div>
-    </section>
-
-    
-    <section class="panel" id="caller">
-      <h3>Draw List</h3>
-      <div id="last-number" class="last-number">–</div>
-
-      <div class="two-col">
-        <div class="list-block">
-          <div class="list-head">Last Word</div>
-          <div id="drawn-grid" class="box-grid"></div>
+      <details open>
+        <summary>PDF Settings</summary>
+        <div class="row"></div>
+        <div class="row">
+          <label class="label">Band Color</label>
+          <input type="color" id="opt-band-color" value="#ff7a00" />
+          <label class="label">Text Color</label>
+          <input type="color" id="opt-band-text-color" value="#000000" />
         </div>
-      </div>
+        <div class="row">
+          <label class="label">Serial Start:</label>
+          <input type="number" id="opt-serial-start" value="1" min="1" />
+          <label class="label">Page Count</label>
+          <input type="number" id="opt-pages" value="1" min="1" />
+          <label class="label">File Name</label>
+          <input type="text" id="opt-basename" value="WordBingoBala_" />
+        </div>
+        <div class="row">
+          <label class="label">TTS Language: <b>English</b></label>
+        </div>
+      </details>
     </section>
   </main>
 <h1>WORD BİNGOBALA Nedir?</h1>
