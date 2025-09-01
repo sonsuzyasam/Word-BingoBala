@@ -318,7 +318,7 @@
     }
 
     function pickLang(){
-  return 'en-US';
+  return 'en-GB'; // İngiliz İngilizcesi
     }
     function pickVoiceFor(lang){
       const voices = speechSynthesis.getVoices();
@@ -336,9 +336,9 @@
     function speakNumber(n){
   if(!('speechSynthesis' in window)) return;
   const u = new SpeechSynthesisUtterance();
-  u.lang = 'en-US';
+  u.lang = pickLang();
   u.text = `${n}`;
-  const v = pickVoiceFor('en-US');
+  const v = pickVoiceFor(u.lang);
   if(v) u.voice = v;
   speechSynthesis.cancel(); speechSynthesis.speak(u);
     }
